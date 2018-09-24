@@ -21,18 +21,12 @@ Tests shown that with -Xmx500M size of Batch files from step two could be up to 
 
 
 ### config.properties
-// Is not implemented
-dataType=word
+```sh
+dataType=word  # Is not implemented
 
-// Size of initial data in memory (.txt file would be bigger)
-dataSize=80000000            
-
-// Directory where sorted, unsorted and all the intermediate files are stored
-workingDirectory = /tmp/data/
-
+dataSize=80000000  # Size of initial data in memory (.txt file would be bigger)
+workingDirectory = /tmp/data/  # Directory where sorted, unsorted and all the intermediate files are stored
 unsortedFileName = unsorted.txt
-
 sortedFilePrefix = sorted
-
-// Limits memory usage to BatchSorter to 40% of all free memory before BatchSorter was started
-useMemory = 0.4                   
+useMemory = 0.4  # Limits memory usage to BatchSorter to 40% of all free memory before BatchSorter was started
+```
