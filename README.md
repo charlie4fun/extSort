@@ -12,7 +12,16 @@ java -jar target/ext-sorting-1.0-SNAPSHOT-jar-with-dependencies.jar
 2. Then data is splited into files, which size depends on JVM memory limitations, by BatchSorter. It also sorts data with Collections.sort().
 3. Then files are joined by SortedLongsFilesMerger.
 
-Tests shows that with -Xmx500M size of Batch files from step two could be up to 230 MB. And SortedLongsFilesMerger could handle up to 5900 files. So size of initial usorted file that could be handled is up to 1300 GB (text data).
+Tests shown that with -Xmx500M size of Batch files from step two could be up to 230 MB. And SortedLongsFilesMerger could handle up to 5900 files. So size of initial usorted file that could be handled is up to 1300 GB (text data).
+
+### config.priperties
+dataType=word                      # Does not inplemented
+
+dataSize=80000000                  # Size of initial data in memory (.txt file would be bigger)
+workingDirectory = /tmp/data/      # Directory where sorted, unsorted and all the intermediate files are stored
+unsortedFileName = unsorted.txt  
+sortedFilePrefix = sorted
+useMemory = 0.4                    # Limits memory usage to BatchSorter to 40% of all free memory before BatchSorter was started
 
 ### Todos
  - Write MORE Tests
